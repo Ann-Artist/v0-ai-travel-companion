@@ -115,7 +115,7 @@ export default function DeafUserInterface() {
   }
 
   return (
-    <main className="min-h-screen bg-white p-4">
+    <main className="min-h-screen bg-background p-4">
       <div className="w-full max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -123,20 +123,20 @@ export default function DeafUserInterface() {
             variant="outline"
             size="lg"
             onClick={handleGoBack}
-            className="p-4 bg-white hover:bg-violet-50 hover:border-violet-400"
+            className="p-4 bg-transparent"
             aria-label="Go back to main menu"
           >
-            <ArrowLeft className="h-6 w-6 text-gray-600" />
+            <ArrowLeft className="h-6 w-6" />
           </Button>
-          <h1 className="text-3xl font-bold text-gray-600">Visual Interface</h1>
+          <h1 className="text-3xl font-bold text-foreground">Visual Interface</h1>
           <div className="ml-auto flex items-center gap-2">
             {isListeningForSounds ? (
-              <Badge variant="secondary" className="text-sm bg-violet-100 text-violet-600">
+              <Badge variant="secondary" className="text-sm">
                 <Volume2 className="h-4 w-4 mr-1" />
                 Sound Detection ON
               </Badge>
             ) : (
-              <Badge variant="outline" className="text-sm border-gray-300 text-gray-600">
+              <Badge variant="outline" className="text-sm">
                 <VolumeX className="h-4 w-4 mr-1" />
                 Sound Detection OFF
               </Badge>
@@ -148,13 +148,13 @@ export default function DeafUserInterface() {
           {/* Left Column - Navigation Setup */}
           <div className="space-y-6">
             {/* Location Input */}
-            <Card className="border-2 border-gray-200 hover:border-violet-400 hover:bg-violet-50 transition-colors">
+            <Card>
               <CardHeader>
-                <CardTitle className="text-xl text-gray-600">Travel Locations</CardTitle>
+                <CardTitle className="text-xl">Travel Locations</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <Label htmlFor="from" className="text-base font-medium text-gray-600">
+                  <Label htmlFor="from" className="text-base font-medium">
                     From (Starting Location)
                   </Label>
                   <Input
@@ -162,12 +162,12 @@ export default function DeafUserInterface() {
                     value={fromLocation}
                     onChange={(e) => setFromLocation(e.target.value)}
                     placeholder="Enter your starting location"
-                    className="mt-1 text-lg p-3 border-gray-200 focus:border-violet-400"
+                    className="mt-1 text-lg p-3"
                     disabled={isNavigating}
                   />
                 </div>
                 <div>
-                  <Label htmlFor="to" className="text-base font-medium text-gray-600">
+                  <Label htmlFor="to" className="text-base font-medium">
                     To (Destination)
                   </Label>
                   <Input
@@ -175,7 +175,7 @@ export default function DeafUserInterface() {
                     value={toLocation}
                     onChange={(e) => setToLocation(e.target.value)}
                     placeholder="Enter your destination"
-                    className="mt-1 text-lg p-3 border-gray-200 focus:border-violet-400"
+                    className="mt-1 text-lg p-3"
                     disabled={isNavigating}
                   />
                 </div>
@@ -183,9 +183,9 @@ export default function DeafUserInterface() {
             </Card>
 
             {/* Navigation Controls */}
-            <Card className="border-2 border-gray-200 hover:border-violet-400 hover:bg-violet-50 transition-colors">
+            <Card>
               <CardHeader>
-                <CardTitle className="text-xl text-gray-600">Navigation Control</CardTitle>
+                <CardTitle className="text-xl">Navigation Control</CardTitle>
               </CardHeader>
               <CardContent>
                 {!isNavigating ? (
@@ -193,7 +193,7 @@ export default function DeafUserInterface() {
                     size="lg"
                     onClick={handleStartNavigation}
                     disabled={!fromLocation || !toLocation}
-                    className="w-full p-4 text-lg bg-violet-600 hover:bg-violet-700 text-white"
+                    className="w-full p-4 text-lg"
                   >
                     <Navigation className="h-6 w-6 mr-2" />
                     Start Visual Navigation
@@ -208,30 +208,30 @@ export default function DeafUserInterface() {
 
             {/* Current Direction */}
             {isNavigating && currentDirection && (
-              <Card className="border-2 border-violet-400 bg-violet-50">
+              <Card className="border-2 border-secondary">
                 <CardHeader>
-                  <CardTitle className="text-xl flex items-center gap-2 text-gray-600">
+                  <CardTitle className="text-xl flex items-center gap-2">
                     {getDirectionIcon(currentDirection)}
                     Current Direction
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-2xl font-bold text-gray-600">{currentDirection}</p>
+                  <p className="text-2xl font-bold text-foreground">{currentDirection}</p>
                 </CardContent>
               </Card>
             )}
 
             {/* Next Transport */}
             {isNavigating && nextTransport && (
-              <Card className="bg-violet-50 border-violet-200">
+              <Card className="bg-accent/10 border-accent">
                 <CardHeader>
-                  <CardTitle className="text-lg flex items-center gap-2 text-gray-600">
-                    <MapPin className="h-5 w-5 text-violet-600" />
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <MapPin className="h-5 w-5" />
                     Public Transport
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-lg font-medium text-gray-600">{nextTransport}</p>
+                  <p className="text-lg font-medium text-foreground">{nextTransport}</p>
                 </CardContent>
               </Card>
             )}
@@ -239,20 +239,20 @@ export default function DeafUserInterface() {
 
           {/* Right Column - Sound Alerts */}
           <div className="space-y-6">
-            <Card className="h-[600px] flex flex-col border-2 border-gray-200 hover:border-violet-400 hover:bg-violet-50 transition-colors">
+            <Card className="h-[600px] flex flex-col">
               <CardHeader>
-                <CardTitle className="text-xl flex items-center gap-2 text-gray-600">
-                  <Volume2 className="h-6 w-6 text-violet-600" />
+                <CardTitle className="text-xl flex items-center gap-2">
+                  <Volume2 className="h-6 w-6" />
                   Live Sound Alerts
                 </CardTitle>
-                <p className="text-sm text-gray-500">Environmental sounds converted to text in real-time</p>
+                <p className="text-sm text-muted-foreground">Environmental sounds converted to text in real-time</p>
               </CardHeader>
               <CardContent className="flex-1 overflow-hidden">
                 <div className="h-full overflow-y-auto space-y-3">
                   {soundAlerts.length === 0 ? (
-                    <div className="flex items-center justify-center h-full text-gray-500">
+                    <div className="flex items-center justify-center h-full text-muted-foreground">
                       <div className="text-center">
-                        <Volume2 className="h-12 w-12 mx-auto mb-2 opacity-50 text-violet-400" />
+                        <Volume2 className="h-12 w-12 mx-auto mb-2 opacity-50" />
                         <p>No sound alerts yet</p>
                         <p className="text-sm">Start navigation to begin sound detection</p>
                       </div>
@@ -284,15 +284,15 @@ export default function DeafUserInterface() {
         </div>
 
         {/* Visual Instructions */}
-        <Card className="mt-6 bg-violet-50 border-violet-200">
+        <Card className="mt-6 bg-muted/30">
           <CardHeader>
-            <CardTitle className="text-lg text-gray-600">How to Use Visual Interface</CardTitle>
+            <CardTitle className="text-lg">How to Use Visual Interface</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div>
-                <h4 className="font-medium mb-2 text-gray-600">Navigation:</h4>
-                <ul className="space-y-1 text-gray-500">
+                <h4 className="font-medium mb-2">Navigation:</h4>
+                <ul className="space-y-1 text-muted-foreground">
                   <li>• Type your starting location and destination</li>
                   <li>• Click "Start Visual Navigation" to begin</li>
                   <li>• Follow the large text directions displayed</li>
@@ -300,8 +300,8 @@ export default function DeafUserInterface() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium mb-2 text-gray-600">Sound Alerts:</h4>
-                <ul className="space-y-1 text-gray-500">
+                <h4 className="font-medium mb-2">Sound Alerts:</h4>
+                <ul className="space-y-1 text-muted-foreground">
                   <li>• Environmental sounds are converted to text</li>
                   <li>• Announcements appear in real-time</li>
                   <li>• Different colors indicate alert types</li>
