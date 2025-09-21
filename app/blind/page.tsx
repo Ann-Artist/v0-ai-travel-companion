@@ -178,7 +178,7 @@ export default function BlindUserInterface() {
 
   return (
     <main
-      className="min-h-screen bg-background p-4"
+      className="min-h-screen bg-white p-4"
       onClick={() => {
         if (!isListening && !currentField) {
           speak(
@@ -194,26 +194,26 @@ export default function BlindUserInterface() {
             variant="outline"
             size="lg"
             onClick={handleGoBack}
-            className="p-4 bg-transparent"
+            className="p-4 bg-white hover:bg-violet-50 hover:border-violet-400"
             aria-label="Go back to main menu"
           >
-            <ArrowLeft className="h-6 w-6" />
+            <ArrowLeft className="h-6 w-6 text-gray-600" />
           </Button>
-          <h1 className="text-3xl font-bold text-foreground">Voice Interface</h1>
+          <h1 className="text-3xl font-bold text-gray-600">Voice Interface</h1>
         </div>
 
         {/* Status Card */}
-        <Card className="mb-8 border-2 border-secondary">
+        <Card className="mb-8 border-2 border-gray-200 hover:border-violet-400 hover:bg-violet-50 transition-colors">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-xl">
-              <Volume2 className="h-6 w-6 text-secondary" />
+              <Volume2 className="h-6 w-6 text-violet-600" />
               Status
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-lg font-medium text-foreground">{statusMessage}</p>
+            <p className="text-lg font-medium text-gray-600">{statusMessage}</p>
             {isListening && (
-              <div className="flex items-center gap-2 mt-2 text-secondary">
+              <div className="flex items-center gap-2 mt-2 text-violet-600">
                 <Mic className="h-5 w-5 animate-pulse" />
                 <span>Listening...</span>
               </div>
@@ -223,16 +223,18 @@ export default function BlindUserInterface() {
 
         {/* Location Cards */}
         <div className="grid gap-6 mb-8">
-          <Card className="border-2 hover:border-secondary transition-colors">
+          <Card className="border-2 border-gray-200 hover:border-violet-400 hover:bg-violet-50 transition-colors">
             <CardHeader>
-              <CardTitle className="text-xl">From Location</CardTitle>
+              <CardTitle className="text-xl text-gray-600">From Location</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg mb-4 min-h-[2rem]">{fromLocation || "Not set - tap button and speak"}</p>
+              <p className="text-lg mb-4 min-h-[2rem] text-gray-600">
+                {fromLocation || "Not set - tap button and speak"}
+              </p>
               <Button
                 size="lg"
                 onClick={handleSetFromLocation}
-                className="w-full p-6 text-lg"
+                className="w-full p-6 text-lg bg-gray-600 hover:bg-violet-600 text-white transition-colors"
                 disabled={isListening}
                 aria-label="Set starting location with voice"
               >
@@ -242,16 +244,18 @@ export default function BlindUserInterface() {
             </CardContent>
           </Card>
 
-          <Card className="border-2 hover:border-secondary transition-colors">
+          <Card className="border-2 border-gray-200 hover:border-violet-400 hover:bg-violet-50 transition-colors">
             <CardHeader>
-              <CardTitle className="text-xl">To Location</CardTitle>
+              <CardTitle className="text-xl text-gray-600">To Location</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-lg mb-4 min-h-[2rem]">{toLocation || "Not set - tap button and speak"}</p>
+              <p className="text-lg mb-4 min-h-[2rem] text-gray-600">
+                {toLocation || "Not set - tap button and speak"}
+              </p>
               <Button
                 size="lg"
                 onClick={handleSetToLocation}
-                className="w-full p-6 text-lg"
+                className="w-full p-6 text-lg bg-gray-600 hover:bg-violet-600 text-white transition-colors"
                 disabled={isListening}
                 aria-label="Set destination with voice"
               >
@@ -268,7 +272,7 @@ export default function BlindUserInterface() {
             size="lg"
             onClick={handleStartNavigation}
             disabled={!fromLocation || !toLocation || isNavigating}
-            className="w-full p-6 text-lg bg-secondary hover:bg-secondary/90"
+            className="w-full p-6 text-lg bg-violet-600 hover:bg-violet-700 text-white"
             aria-label="Start voice-guided navigation"
           >
             <Navigation className="h-6 w-6 mr-2" />
@@ -279,7 +283,7 @@ export default function BlindUserInterface() {
             variant="outline"
             size="lg"
             onClick={handleCameraDetection}
-            className="w-full p-6 text-lg bg-transparent"
+            className="w-full p-6 text-lg bg-white hover:bg-violet-50 hover:border-violet-400 text-gray-600"
             aria-label="Activate camera for object detection"
           >
             <Camera className="h-6 w-6 mr-2" />
@@ -288,12 +292,12 @@ export default function BlindUserInterface() {
         </div>
 
         {/* Voice Commands Help */}
-        <Card className="mt-8 bg-muted/50">
+        <Card className="mt-8 bg-violet-50 border-violet-200">
           <CardHeader>
-            <CardTitle className="text-lg">Voice Commands</CardTitle>
+            <CardTitle className="text-lg text-gray-600">Voice Commands</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-gray-600">
               <li>• Say "from" to set starting location</li>
               <li>• Say "to" or "destination" to set destination</li>
               <li>• Say "navigate" or "start journey" to begin</li>
