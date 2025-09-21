@@ -199,7 +199,7 @@ export default function BlindUserInterface() {
           >
             <ArrowLeft className="h-6 w-6" />
           </Button>
-          <h1 className="text-3xl font-bold text-foreground">Voice Interface</h1>
+          <h1 className="text-3xl font-bold text-foreground">Blind</h1>
         </div>
 
         {/* Status Card */}

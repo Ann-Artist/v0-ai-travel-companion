@@ -47,11 +47,11 @@ export default function HomePage() {
               <div className="mx-auto mb-4 p-4 bg-secondary/10 rounded-full w-fit">
                 <EyeOff className="h-12 w-12 text-secondary" />
               </div>
-              <CardTitle className="text-2xl font-bold">Voice Interface</CardTitle>
+              <CardTitle className="text-2xl font-bold">Blind</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <Button className="w-full" size="lg">
-                Start Voice Interface
+                Start Blind Interface
               </Button>
             </CardContent>
           </Card>
@@ -72,11 +72,11 @@ export default function HomePage() {
               <div className="mx-auto mb-4 p-4 bg-secondary/10 rounded-full w-fit">
                 <VolumeX className="h-12 w-12 text-secondary" />
               </div>
-              <CardTitle className="text-2xl font-bold">Visual Interface</CardTitle>
+              <CardTitle className="text-2xl font-bold">Deaf</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <Button className="w-full" size="lg">
-                Start Visual Interface
+                Start Deaf Interface
               </Button>
             </CardContent>
           </Card>
@@ -97,11 +97,11 @@ export default function HomePage() {
               <div className="mx-auto mb-4 p-4 bg-secondary/10 rounded-full w-fit">
                 <Users className="h-12 w-12 text-secondary" />
               </div>
-              <CardTitle className="text-2xl font-bold">Standard Interface</CardTitle>
+              <CardTitle className="text-2xl font-bold">Normal</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
               <Button className="w-full" size="lg">
-                Start Standard Interface
+                Start Normal Interface
               </Button>
             </CardContent>
           </Card>

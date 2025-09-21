@@ -194,7 +194,7 @@ export default function NormalUserInterface() {
           >
             <ArrowLeft className="h-6 w-6" />
           </Button>
-          <h1 className="text-3xl font-bold text-foreground">Standard Interface</h1>
+          <h1 className="text-3xl font-bold text-foreground">Normal</h1>
           <div className="ml-auto flex items-center gap-2">
             {isListening && (
               <Badge variant="secondary" className="animate-pulse">

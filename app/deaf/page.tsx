@@ -128,7 +128,7 @@ export default function DeafUserInterface() {
           >
             <ArrowLeft className="h-6 w-6" />
           </Button>
-          <h1 className="text-3xl font-bold text-foreground">Visual Interface</h1>
+          <h1 className="text-3xl font-bold text-foreground">Deaf</h1>
           <div className="ml-auto flex items-center gap-2">
             {isListeningForSounds ? (
               <Badge variant="secondary" className="text-sm">
