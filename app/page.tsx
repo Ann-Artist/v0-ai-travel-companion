@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Eye, EyeOff, Users } from "lucide-react"
+import { VolumeX, EyeOff, Users } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 type UserType = "blind" | "deaf" | "normal" | null
@@ -70,7 +70,7 @@ export default function HomePage() {
           >
             <CardHeader className="text-center pb-4">
               <div className="mx-auto mb-4 p-4 bg-secondary/10 rounded-full w-fit">
-                <Eye className="h-12 w-12 text-secondary" />
+                <VolumeX className="h-12 w-12 text-secondary" />
               </div>
               <CardTitle className="text-2xl font-bold">Visual Interface</CardTitle>
             </CardHeader>
