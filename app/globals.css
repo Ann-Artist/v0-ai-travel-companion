@@ -16,7 +16,8 @@
   --secondary: #8b5cf6;
   --secondary-foreground: #ffffff;
   --muted: #6b7280;
-  --muted-foreground: #ffffff;
+  /* Fixed muted-foreground to use dark gray instead of white for better contrast */
+  --muted-foreground: #4b5563;
   --accent: #8b5cf6;
   --accent-foreground: #ffffff;
   --destructive: #be123c;
